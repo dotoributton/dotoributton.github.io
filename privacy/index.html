@@ -21,8 +21,19 @@
 <p>개발자는 이용자의 이름, 이메일, 전화번호 등 개인을 식별할 수 있는 정보를 직접 수집하지 않습니다. 게임에는 회원 가입·로그인 기능이 없으며, 개발자가 운영하는 서버도 없습니다.</p>
 <p>게임 진행 상황과 음향·화면 설정은 이용자의 기기 안에 저장되며 개발자에게 전송되지 않습니다. 이 정보는 게임을 삭제하거나 앱 데이터를 지우면 기기에서 삭제됩니다.</p>
 <p>기기의 Android 백업 기능이 켜져 있으면 이 정보가 이용자 본인의 Google 계정 백업에 포함되어, 게임을 다시 설치할 때 복원될 수 있습니다. 이 백업은 Google이 이용자 계정에 보관하며 개발자는 접근할 수 없습니다. 백업은 Android 기기의 <strong>설정 &gt; Google &gt; 백업</strong>(기기에 따라 <strong>설정 &gt; 시스템 &gt; 백업</strong>)에서 관리할 수 있습니다.</p>
+<p>게임 오류를 찾아 고치기 위한 진단 정보는 2항, 광고 관련 정보는 3항에 따라 처리됩니다.</p>
 
-<h2>2. 광고 서비스(Google AdMob)</h2>
+<h2>2. 오류 진단 서비스(Unity)</h2>
+<p>게임은 게임 엔진 Unity에 포함된 진단 서비스를 사용해, 게임이 멈추거나 오류가 생긴 원인을 찾아 고칩니다. 이 과정에서 Unity Technologies가 개발자를 대신하여 아래 정보를 수집·처리합니다.</p>
+<table>
+<tr><th>항목</th><th>예시</th><th>목적</th></tr>
+<tr><td>오류 정보</td><td>비정상 종료 기록, 응답 없음(ANR), 오류 메시지와 발생 위치</td><td>오류 원인 파악과 수정</td></tr>
+<tr><td>기기·성능 정보</td><td>기기 모델, 운영체제 버전, 앱 버전, 성능 정보</td><td>기기별 오류 파악, 게임 안정화</td></tr>
+<tr><td>설치 식별자</td><td>Unity가 게임 설치마다 만드는 무작위 ID (광고 ID가 아님)</td><td>같은 오류가 몇 대의 기기에서 생기는지 파악</td></tr>
+</table>
+<p>이 정보는 전송 과정에서 암호화되며, 광고나 맞춤 광고에 사용되지 않습니다. 설치 식별자로는 이용자가 누구인지 알 수 없으며, 수집된 정보는 수집 후 90일이 지나면 삭제됩니다.</p>
+
+<h2>3. 광고 서비스(Google AdMob)</h2>
 <p>게임은 이용자가 원할 때 시청하는 보상형 광고를 제공하기 위해 Google의 광고 서비스인 Google AdMob을 사용합니다. 광고를 불러오고 보여 주는 과정에서 Google이 아래 정보를 수집·처리할 수 있습니다.</p>
 <table>
 <tr><th>항목</th><th>예시</th><th>목적</th></tr>
@@ -37,7 +48,7 @@
 <li><a href="https://policies.google.com/technologies/partner-sites?hl=ko">Google 파트너 사이트·앱에서 Google이 정보를 사용하는 방식</a></li>
 </ul>
 
-<h2>3. 행태정보의 수집·이용·제공 및 거부</h2>
+<h2>4. 행태정보의 수집·이용·제공 및 거부</h2>
 <table>
 <tr><th>구분</th><th>내용</th></tr>
 <tr><td>수집하는 행태정보</td><td>앱 실행 기록, 광고 조회·클릭 기록, 광고 ID</td></tr>
@@ -49,42 +60,46 @@
 <p><strong>거부 방법:</strong> Android 기기의 <strong>설정 &gt; Google &gt; 광고</strong>(기기에 따라 <strong>설정 &gt; 개인정보 보호 &gt; 광고</strong>)에서 광고 ID를 삭제하거나 재설정하면 맞춤 광고를 제한할 수 있습니다. 거부해도 게임 이용과 광고 보상에는 차이가 없으며, 이용자의 관심과 관계없는 광고가 표시됩니다.</p>
 <p>법에 따라 사전 동의가 필요한 지역(유럽경제지역·영국·스위스 등)의 이용자에게는 처음 실행할 때 Google의 동의 화면이 표시됩니다. 이 지역 이용자는 게임 설정 화면의 "개인정보 설정" 버튼으로 언제든지 선택을 바꿀 수 있습니다.</p>
 
-<h2>4. 개인정보의 국외 이전</h2>
-<p>광고 제공을 위해 2항의 정보가 아래와 같이 국외로 이전됩니다.</p>
+<h2>5. 개인정보의 국외 이전</h2>
+<p>오류 진단과 광고 제공을 위해 2항과 3항의 정보가 아래와 같이 국외로 이전됩니다.</p>
 <table>
-<tr><th>구분</th><th>내용</th></tr>
-<tr><td>이전받는 자</td><td>Google LLC (<a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>에 안내된 문의 방법으로 연락 가능)</td></tr>
-<tr><td>이전 국가</td><td>미국</td></tr>
-<tr><td>이전 항목</td><td>2항의 기기 식별자, 네트워크·위치 정보, 이용 기록, 진단 정보</td></tr>
-<tr><td>이전 시기·방법</td><td>게임 실행 중 광고를 불러오거나 표시할 때 암호화된 네트워크로 전송</td></tr>
-<tr><td>이전 목적</td><td>광고 제공, 광고 성과 측정, 부정 사용 방지</td></tr>
-<tr><td>보유·이용 기간</td><td>Google의 개인정보처리방침에 따름</td></tr>
+<tr><th>구분</th><th>오류 진단</th><th>광고</th></tr>
+<tr><td>이전받는 자</td><td>Unity Technologies (<a href="mailto:DPO@unity3d.com">DPO@unity3d.com</a>)</td><td>Google LLC (<a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>에 안내된 문의 방법으로 연락 가능)</td></tr>
+<tr><td>이전 국가</td><td>미국 등 Unity가 데이터를 처리하는 국가</td><td>미국</td></tr>
+<tr><td>이전 항목</td><td>2항의 오류 정보, 기기·성능 정보, 설치 식별자</td><td>3항의 기기 식별자, 네트워크·위치 정보, 이용 기록, 진단 정보</td></tr>
+<tr><td>이전 시기·방법</td><td>게임 실행 중 오류·진단 정보가 생길 때 암호화된 네트워크로 전송</td><td>게임 실행 중 광고를 불러오거나 표시할 때 암호화된 네트워크로 전송</td></tr>
+<tr><td>이전 목적</td><td>오류 원인 파악과 수정, 게임 안정화</td><td>광고 제공, 광고 성과 측정, 부정 사용 방지</td></tr>
+<tr><td>보유·이용 기간</td><td>수집 후 90일</td><td>Google의 개인정보처리방침에 따름</td></tr>
 </table>
-<p><strong>거부 방법과 결과:</strong> 3항의 방법으로 맞춤 광고를 제한할 수 있습니다. 광고 관련 정보의 전송 자체를 원하지 않으면 게임 이용을 중단하고 게임을 삭제할 수 있습니다.</p>
+<p><strong>거부 방법과 결과:</strong> 4항의 방법으로 맞춤 광고를 제한할 수 있습니다. 오류 진단 정보나 광고 관련 정보의 전송 자체를 원하지 않으면 게임 이용을 중단하고 게임을 삭제할 수 있습니다.</p>
 
-<h2>5. 보유 및 파기</h2>
-<p>개발자는 개인정보를 보관하지 않습니다. 기기에 저장된 게임 데이터는 게임을 삭제하거나 앱 데이터를 지우면 기기에서 삭제되며, Android 백업에 포함된 사본은 1항에 안내한 백업 설정에서 관리할 수 있습니다. Google이 처리하는 정보의 보유 기간은 Google의 개인정보처리방침을 따릅니다.</p>
+<h2>6. 보유 및 파기</h2>
+<p>개발자는 개인정보를 별도로 보관하지 않습니다. 기기에 저장된 게임 데이터는 게임을 삭제하거나 앱 데이터를 지우면 기기에서 삭제되며, Android 백업에 포함된 사본은 1항에 안내한 백업 설정에서 관리할 수 있습니다. Unity가 처리하는 오류 진단 정보는 수집 후 90일이 지나면 삭제되며, Google이 처리하는 정보의 보유 기간은 Google의 개인정보처리방침을 따릅니다.</p>
 
-<h2>6. 제3자 제공</h2>
-<p>개발자는 이용자의 개인정보를 판매하거나 제3자에게 제공하지 않습니다. 광고 제공을 위해 Google로 전송되는 정보는 3항과 4항에 안내한 것과 같습니다.</p>
+<h2>7. 제3자 제공 및 처리 위탁</h2>
+<p>개발자는 이용자의 개인정보를 판매하거나 제3자에게 제공하지 않습니다. 광고 제공을 위해 Google로 전송되는 정보는 4항과 5항에 안내한 것과 같습니다.</p>
+<table>
+<tr><th>수탁자</th><th>위탁 업무</th></tr>
+<tr><td>Unity Technologies</td><td>게임 오류·성능 정보의 수집과 분석</td></tr>
+</table>
 
-<h2>7. 아동의 개인정보</h2>
+<h2>8. 아동의 개인정보</h2>
 <p>게임은 만 14세 이상을 대상으로 하며, 만 14세 미만 아동을 대상으로 하지 않습니다. 만 14세 미만 아동의 정보가 처리된 사실을 알게 되면 아래 연락처로 알려 주세요.</p>
 
-<h2>8. 이용자의 권리</h2>
-<p>이용자는 개인정보의 열람·정정·삭제·처리 정지를 요청할 수 있습니다. 개발자는 직접 보관하는 개인정보가 없으므로, 게임 데이터 삭제는 게임 삭제 또는 앱 데이터 삭제로 할 수 있습니다. Google이 처리하는 정보에 대한 권리는 Google 계정 설정이나 Google의 개인정보처리방침에 안내된 방법으로 행사할 수 있습니다. 문의 사항은 아래 연락처로 보내 주세요.</p>
+<h2>9. 이용자의 권리</h2>
+<p>이용자는 개인정보의 열람·정정·삭제·처리 정지를 요청할 수 있습니다. 게임 데이터 삭제는 게임 삭제 또는 앱 데이터 삭제로 할 수 있습니다. 오류 진단 정보에 대한 요청은 아래 연락처로 보내 주시면 개발자가 Unity를 통해 처리합니다. Google이 처리하는 정보에 대한 권리는 Google 계정 설정이나 Google의 개인정보처리방침에 안내된 방법으로 행사할 수 있습니다.</p>
 
-<h2>9. 안전성 확보 조치</h2>
-<p>개발자는 개인정보를 별도로 수집·보관하지 않으며, 광고 서비스와의 통신은 암호화된 연결로 이루어집니다.</p>
+<h2>10. 안전성 확보 조치</h2>
+<p>개발자는 개인정보를 별도로 보관하지 않으며, 오류 진단·광고 서비스와의 통신은 암호화된 연결로 이루어집니다.</p>
 
-<h2>10. 개인정보 보호책임자 및 문의처</h2>
+<h2>11. 개인정보 보호책임자 및 문의처</h2>
 <ul>
 <li>개인정보 보호책임자: 고승환 (Dotori Button 개발자)</li>
 <li>이메일: <a href="mailto:dotoributton@gmail.com">dotoributton@gmail.com</a></li>
 </ul>
 <p>개인정보 침해에 대한 상담이 필요하면 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118) 또는 개인정보분쟁조정위원회(www.kopico.go.kr, 1833-6972)에 문의할 수 있습니다.</p>
 
-<h2>11. 방침의 변경</h2>
+<h2>12. 방침의 변경</h2>
 <p>이 방침이 바뀌면 이 페이지에 변경 내용과 시행일을 게시합니다.</p>
 </section>
 
@@ -98,8 +113,19 @@
 <p>We do not collect personally identifiable information such as your name, email address, or phone number. The Game has no sign-up or login, and we do not operate any servers for it.</p>
 <p>Your game progress and sound and display settings are stored on your device and are never sent to us. They are deleted from your device when you uninstall the Game or clear its app data.</p>
 <p>If Android backup is turned on, this data may be included in your own Google account backup and restored when you reinstall the Game. Google keeps this backup in your account, and we cannot access it. You can manage backups in Android <strong>Settings &gt; Google &gt; Backup</strong> (or <strong>Settings &gt; System &gt; Backup</strong>, depending on the device).</p>
+<p>Diagnostic information used to find and fix errors is handled as described in Section 2, and advertising information as described in Section 3.</p>
 
-<h2>2. Advertising (Google AdMob)</h2>
+<h2>2. Error diagnostics (Unity)</h2>
+<p>The Game uses the diagnostics service built into the Unity game engine to find and fix the causes of crashes and errors. Unity Technologies collects and processes the following information on our behalf.</p>
+<table>
+<tr><th>Type</th><th>Examples</th><th>Purpose</th></tr>
+<tr><td>Error data</td><td>Crash logs, app-not-responding (ANR) reports, error messages and where they occurred</td><td>Finding and fixing errors</td></tr>
+<tr><td>Device and performance data</td><td>Device model, OS version, app version, performance data</td><td>Identifying device-specific issues, improving stability</td></tr>
+<tr><td>Installation ID</td><td>A random ID Unity creates for each installation (not the advertising ID)</td><td>Measuring how many devices an error affects</td></tr>
+</table>
+<p>This information is encrypted in transit and is not used for advertising. The installation ID does not tell us who you are, and the data is deleted 90 days after collection.</p>
+
+<h2>3. Advertising (Google AdMob)</h2>
 <p>The Game uses Google AdMob to show optional rewarded ads that you choose to watch. To load and show ads, Google may collect and process the following information.</p>
 <table>
 <tr><th>Type</th><th>Examples</th><th>Purpose</th></tr>
@@ -114,33 +140,33 @@
 <li><a href="https://policies.google.com/technologies/partner-sites?hl=en">How Google uses information from sites or apps that use its services</a></li>
 </ul>
 
-<h2>3. Personalized ads and your choices</h2>
+<h2>4. Personalized ads and your choices</h2>
 <p>Google may use your advertising ID, app launches, and ad views and clicks to show ads that match your interests and to measure ad performance. We do not collect or store this information ourselves.</p>
 <p>You can reset or delete your advertising ID to limit personalized ads in Android <strong>Settings &gt; Google &gt; Ads</strong> (or <strong>Settings &gt; Privacy &gt; Ads</strong>, depending on the device). Opting out does not affect gameplay or ad rewards; you will see ads that are not based on your interests.</p>
 <p>If you are in a region where prior consent is required by law (such as the European Economic Area, the United Kingdom, or Switzerland), Google's consent form is shown the first time you open the Game. You can change your choice at any time with the "Privacy settings" button on the Game's settings screen.</p>
 
-<h2>4. International transfer</h2>
-<p>To show ads, the information described in Section 2 is sent over an encrypted connection to Google LLC in the United States when ads are loaded or shown, and is retained according to Google's Privacy Policy. If you do not want this information to be sent, you can stop using and uninstall the Game.</p>
+<h2>5. International transfer</h2>
+<p>The information described in Section 2 is sent over an encrypted connection to Unity Technologies (<a href="mailto:DPO@unity3d.com">DPO@unity3d.com</a>) in the United States and other countries where Unity processes data when diagnostic data is generated, and is retained for 90 days. The information described in Section 3 is sent over an encrypted connection to Google LLC in the United States when ads are loaded or shown, and is retained according to Google's Privacy Policy. If you do not want this information to be sent, you can stop using and uninstall the Game.</p>
 
-<h2>5. Retention and deletion</h2>
-<p>We do not retain personal information. Game data is deleted from your device when you uninstall the Game or clear its app data; copies in Android backup can be managed in the backup settings described in Section 1.</p>
+<h2>6. Retention and deletion</h2>
+<p>We do not separately retain personal information. Game data is deleted from your device when you uninstall the Game or clear its app data; copies in Android backup can be managed in the backup settings described in Section 1. Diagnostic data processed by Unity is deleted 90 days after collection.</p>
 
-<h2>6. Sharing</h2>
-<p>We do not sell or share your personal information. Information sent to Google for advertising is described in Sections 3 and 4.</p>
+<h2>7. Sharing and service providers</h2>
+<p>We do not sell or share your personal information. Unity Technologies processes error and performance data on our behalf as a service provider. Information sent to Google for advertising is described in Sections 4 and 5.</p>
 
-<h2>7. Children</h2>
+<h2>8. Children</h2>
 <p>The Game is intended for users aged 14 and older and is not directed at children under 14. If you believe a child under 14 has provided information through the Game, please contact us.</p>
 
-<h2>8. Your rights</h2>
-<p>You may request access to, correction of, deletion of, or restriction of processing of your personal information. Because we do not store personal information, you can delete your game data by uninstalling the Game or clearing its app data. For information processed by Google, use your Google account settings or the methods described in Google's Privacy Policy. Questions can be sent to the contact below.</p>
+<h2>9. Your rights</h2>
+<p>You may request access to, correction of, deletion of, or restriction of processing of your personal information. You can delete your game data by uninstalling the Game or clearing its app data. Requests about diagnostic data can be sent to the contact below, and we will handle them through Unity. For information processed by Google, use your Google account settings or the methods described in Google's Privacy Policy.</p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
 <ul>
 <li>Privacy officer: Seunghwan Ko (developer, Dotori Button)</li>
 <li>Email: <a href="mailto:dotoributton@gmail.com">dotoributton@gmail.com</a></li>
 </ul>
 
-<h2>10. Changes</h2>
+<h2>11. Changes</h2>
 <p>If this policy changes, we will post the updated policy and its effective date on this page.</p>
 </section>
 
